@@ -5,8 +5,8 @@
 # Function to allow user to choose a food and feed pet said food
 def user_choice_food():
     initial_weight = 2
-    low = 1
-    high = len(FOOD_DICT)
+    #low = 1
+    #high = len(FOOD_DICT)
     food_menu = []
     print("Please choose an option from the following foods:")
 
