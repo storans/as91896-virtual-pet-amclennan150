@@ -12,6 +12,7 @@ def show_exercise():
         exercise_menu.append(activity)
 
 
-EXERCISE_DICT = {"Hop": 0.2, "Walk": 0.4, "Run": 0.1, "Jump": 0.3}
+EXERCISE_DICT = {"Hop": -0.2, "Walk": -0.4, "Run": -0.1, "Jump": -0.3}
 
-user_choice()
+show_exercise()
+
