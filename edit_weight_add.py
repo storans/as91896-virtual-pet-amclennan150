@@ -24,18 +24,12 @@ def user_choice_food():
     print("You will feed your pet {}.".format(chosen_food.title()))
 
     initial_weight += FOOD_DICT[chosen_food] + 0
-    print(initial_weight)
-
-    #print("Your pets current weight is {}".format(initial_weight))
-    print("no")
 
 
-#def check_weight(initial_weight):
-    #print("Your pets current weight is {}".format(initial_weight))
-
+    print("Your pets current weight is {}".format(initial_weight))
 
 FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3, "Chocolate": 0.4}
 
 user_choice_food()
-#check_weight()
+
 
