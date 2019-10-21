@@ -27,5 +27,3 @@ initial_weight = check_float("Enter the weight of your virtual pet to beginning 
 
 # Printing the users input
 print("The beginning weight of {} is {}.".format(name, initial_weight))
-
-
