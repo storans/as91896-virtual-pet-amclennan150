@@ -1,6 +1,5 @@
 # welcome user to program
 
-
 # function for formatting the title
 def formatter(character, output):
     print(character * (len(output) + 5))
