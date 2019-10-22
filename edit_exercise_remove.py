@@ -32,4 +32,3 @@ def user_choice_exercise():
 EXERCISE_DICT = {"Hop": -0.2, "Walk": -0.4, "Run": -0.1, "Jump": -0.3}
 
 user_choice_exercise()
-# check_weight()

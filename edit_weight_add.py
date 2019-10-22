@@ -1,12 +1,7 @@
-# Setting an initial weight for the pet
-# initial_weight = 2
-
-# Function for showing pet weight
+# Function for showing and changing pet weight
 # Function to allow user to choose a food and feed pet said food
 def user_choice_food():
-    initial_weight = 2
-    #low = 1
-    #high = len(FOOD_DICT)
+    initial_weight = 2  # SEtting initial weight for pet
     food_menu = []
     print("Please choose an option from the following foods:")
 
@@ -23,13 +18,11 @@ def user_choice_food():
 
     print("You will feed your pet {}.".format(chosen_food.title()))
 
-    initial_weight += FOOD_DICT[chosen_food] + 0
-
+    initial_weight += FOOD_DICT[chosen_food]
 
     print("Your pets current weight is {}".format(initial_weight))
+
 
 FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3, "Chocolate": 0.4}
 
 user_choice_food()
-
-
