@@ -5,11 +5,6 @@ def show_exercise():
         print("{}.  {}".format(number, activity.title()))
         number += 1
         exercise_menu = []
-
-
-    for activity in EXERCISE_DICT:
-        print("{}.  {}".format(number, activity.title()))
-        number += 1
         exercise_menu.append(activity)
 
 

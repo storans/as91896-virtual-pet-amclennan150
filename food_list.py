@@ -22,7 +22,8 @@ def user_choice():
     chosen_food = food_menu[choice - 1]
 
     # printing the users choice along with context
-    print("You will add your points for {}.".format(chosen_food.title()))
+    print("You will feed your pet {}.".format(chosen_food.title()))
 
 
 FOOD_DICT = {"Carrot": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3}
+user_choice()

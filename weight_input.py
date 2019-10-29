@@ -15,7 +15,7 @@ def check_float(question, error, low, high):  # Question and error allow it to b
 
 # Getting the user to input their virtual pets starting weight by running through the function
 initial_weight = check_float("Enter the weight of your virtual pet to beginning with (between 1.5 and 2.5) ",
-                             "Whoops please enter a number between 15 and 2.5", 1.5, 2.5)
+                             "Whoops please enter a number between 1.5 and 2.5", 1.5, 2.5)
 
 # Printing the users input with context
 print("The beginning weight is {}.".format(initial_weight))
