@@ -37,7 +37,6 @@ def user_choice_food():
 
     chosen_food = food_menu[choice - 1]
 
-    #print("You will feed your pet {}.".format(chosen_food.title()))
 
     initial_weight += FOOD_DICT[chosen_food]
 
