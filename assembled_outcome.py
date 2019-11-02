@@ -231,7 +231,7 @@ FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3,
 EXERCISE_DICT = {"Hop": -0.2, "Walk": -0.4, "Run": -0.1, "Jump": -0.3}
 
 # list of names for the user to choose from
-NAME_LIST = ["Coco", "Charlie", "Alvin", "Cupcake", "Felix", "Jazz", "Midnight", "Peanut", "Pearl","Roxie"]
+NAME_LIST = ["Coco", "Charlie", "Alvin", "Cupcake", "Felix", "Jazz", "Midnight", "Peanut", "Pearl", "Roxie"]
 
 
 # beginning of main routine
@@ -283,7 +283,7 @@ while alive:
         # changing the pet weight to the new pet weight
         # (increasing the weight as the pet is being feed)
         pet_weight = user_choice_food(pet_weight)
-        # checking if the pet id alive depending on it's current weight
+        # checking if the pet is alive depending on it's current weight
         # and setting alive to either true or false depending if the pet is dead or alive
         alive = death_checker(pet_weight)
 
