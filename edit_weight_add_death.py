@@ -1,5 +1,6 @@
 # Function for showing and changing pet weight
 
+
 # Function to allow user to choose a food and feed pet said food
 def user_choice_food(weight):
     food_menu = []
@@ -29,11 +30,6 @@ def user_choice_food(weight):
     return weight
 
 
-def set_weight():
-    initial_weight = float(input("Please enter a weight"))
-    return initial_weight
-
-
 def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
     # only overweight is needed as only testing with food here
@@ -53,6 +49,7 @@ def death_checker(weight):
     return pet_alive
 
 
+# food dictionary with weight values to be added
 FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3, "Chocolate": 0.4}
 
 # setting weight to 2 for testing
