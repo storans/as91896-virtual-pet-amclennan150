@@ -33,7 +33,7 @@ def user_choice_exercise(weight):
 def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
     # only underweight is needed as only testing with exercise here
-    if weight < 1.4:
+    if weight < 1.5:
         # simple message saying the users pet has died and why
         print()
         print("You exercised your pet too much and they died")
