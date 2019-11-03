@@ -5,9 +5,9 @@ import time
 
 # function for formatting titles
 def formatting(character, output):
-    print(character * (len(output) + 3))
+    print(character * (len(output) + 4))
     print("{} {} {}".format(character, output, character))
-    print(character * (len(output) + 3))
+    print(character * (len(output) + 4))
 
 
 # function for welcoming the user to the game
@@ -124,6 +124,7 @@ def user_choice_name():
 # getting the user to set the beginning weight of their pet
 def set_weight():
     # getting the user to entering the beginning weight of their pet
+    print()
     weight = check_float("Enter the weight of your virtual pet to beginning "
                          "with (between 1.5 and 2.5) ", "Whoops please enter"
                                                         " a number between 1.5"
@@ -200,7 +201,7 @@ def death_checker(weight):
     if weight > 2.5:
         # simple message saying the users pet has died and why
         print("You fed your pet too much and they died")
-        print("Your pet weighed {:1.1}".format(weight))
+        print("Your pet weighed {:1.1f}".format(weight))
 
         # setting pet_alive loop to false to end game
         pet_alive = False
@@ -209,7 +210,7 @@ def death_checker(weight):
     elif weight < 1.5:
         # simple message saying the users pet has died and why
         print("You didn't feed your pet enough and they died.")
-        print("Your pet weighed {:1.1}".format(weight))
+        print("Your pet weighed {:1.1f}".format(weight))
         # setting pet_alive loop to false to end game
         pet_alive = False
 
@@ -240,6 +241,7 @@ NAME_LIST = ["Coco", "Charlie", "Alvin", "Cupcake", "Felix", "Jazz", "Midnight",
 welcome_info()
 
 # formatting the title
+print()
 formatting("-", "Naming Your Pet")
 # getting the user to select a name for their pet
 user_choice_name()
@@ -258,10 +260,11 @@ alive = True
 while alive:
 
     # menu for the user to choose an option
+    print("-" * 20)
+    print()
     formatting("*", "Menu")
     print()
-    print("*" * 20)
-    print()
+
     # menu for the user to choose the options from
     print("Please choose an option from the following menu:")
     print("1. Show current weight\n"
