@@ -1,4 +1,4 @@
-# printing the exercises in the exercise dictionary to
+# printing the exercises in the exercise dictionary using a dictionary
 
 # exercise dictionary with the available exercises to do
 # along with the weight the pet will lose
