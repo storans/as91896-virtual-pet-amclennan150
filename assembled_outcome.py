@@ -197,19 +197,19 @@ def user_choice_exercise(weight):
 # if too high or low informs users the pet has died
 def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
-    if weight > 2.6:
+    if weight > 2.5:
         # simple message saying the users pet has died and why
         print("You fed your pet too much and they died")
-        print("Your pet weighed {}".format(weight))
+        print("Your pet weighed {:1.1}".format(weight))
 
         # setting pet_alive loop to false to end game
         pet_alive = False
 
     # if the weight is 1.4 or lower inform user, pet has died
-    elif weight < 1.4:
+    elif weight < 1.5:
         # simple message saying the users pet has died and why
         print("You didn't feed your pet enough and they died.")
-        print("Your pet weighed {}".format(weight))
+        print("Your pet weighed {:1.1}".format(weight))
         # setting pet_alive loop to false to end game
         pet_alive = False
 
@@ -274,7 +274,7 @@ while alive:
                                               "between 1 and 5.", 1, 5)
     # if user enters 1 print the current weight of the pet
     if option == 1:
-        print("Your pet currently weighs {}".format(pet_weight))
+        print("Your pet currently weighs {:1.1}".format(pet_weight))
 
     # if user enters 2, runs the feeding function along with checking if the pet weight is too high/low
     # causing the pet to die
