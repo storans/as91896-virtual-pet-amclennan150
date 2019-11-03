@@ -35,9 +35,9 @@ def user_choice_food(weight):
 def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
     # only overweight is needed as only testing with food here
-    if weight > 2.6:
+    if weight > 2.5:
         # simple message saying the users pet has died and why
-        print ()
+        print()
         print("You fed your pet too much and they died")
         print("Your pet weighed {:1.1f}".format(weight))
 
