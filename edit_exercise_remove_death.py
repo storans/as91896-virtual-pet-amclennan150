@@ -35,8 +35,9 @@ def death_checker(weight):
     # only underweight is needed as only testing with exercise here
     if weight < 1.4:
         # simple message saying the users pet has died and why
+        print()
         print("You exercised your pet too much and they died")
-        print("Your pet weighed {:1.1f}".format(weight))
+        print("Your pet weighed {:1.1f}kgs".format(weight))
 
         # setting pet_alive loop to false to end game
         pet_alive = False
