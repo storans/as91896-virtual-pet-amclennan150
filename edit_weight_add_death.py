@@ -1,4 +1,5 @@
-# Function for showing and changing pet weight
+# Function for changing pet weight and getting it to die
+# only increasing weight
 
 
 # Function to allow user to choose a food and feed pet said food
@@ -30,13 +31,15 @@ def user_choice_food(weight):
     return weight
 
 
+# function for checking if the pet is alive every time pet is feeed
 def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
     # only overweight is needed as only testing with food here
     if weight > 2.6:
         # simple message saying the users pet has died and why
+        print ()
         print("You fed your pet too much and they died")
-        print("Your pet weighed {}".format(weight))
+        print("Your pet weighed {:1.1f}".format(weight))
 
         # setting pet_alive loop to false to end game
         pet_alive = False
