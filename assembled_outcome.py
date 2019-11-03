@@ -164,7 +164,7 @@ def user_choice_food(weight):
     return weight
 
 
-# Function to allow user to choose a food and feed pet said food
+# Function to allow user to choose an activity and pet do said activity
 def user_choice_exercise(weight):
     activity_menu = []
     print("Please choose an option from the following activities:")
