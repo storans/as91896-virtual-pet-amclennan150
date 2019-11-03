@@ -12,7 +12,7 @@ def check_float(question, error, low, high):  # Question and error allow it to b
             if low <= number <= high:
                 return number
             else:
-                print(error) # if the user enters un invalid number
+                print(error)  # if the user enters un invalid number
         except ValueError:
             print(error)
 
