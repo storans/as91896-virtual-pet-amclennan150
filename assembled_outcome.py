@@ -18,7 +18,7 @@ def welcome_info():
           "You will be able to choose your pet rabbit's name along with their "
           "beginning weight.\n"
           "For your pet to survive it must be kept between a weight of "
-          "1.5kg and 2.5kg.")
+          "1.5kgs and 2.5kgs.")
 
     # giving the user time to read welcome info before the gaming proceeding
     time.sleep(3)
@@ -67,10 +67,21 @@ def help_info():
 
 # Getting the user to enter their own name for their pet
 def user_enter_name():
-    name_pet = input("What would you like to name your pet? >> ")
+    name_pet = input("What would you like to name your pet? >> ").title().strip()
 
-    # printing the chosen name
-    print("Your pets name is {}".format(name_pet))
+    if name_pet == "":
+        name_pet = "Jazzy"
+        print("You didn't name your pet, so your pet is now called {}".format(name_pet))
+    else:
+        # printing the chosen name
+        print("Your pets name is {}".format(name_pet))
+
+        if name_pet in name_list:
+            print ("This name is already in the list")
+        else:
+            add_name = ""
+            while add_name is "":
+                add_name = input("Do you want to add this name to the list of preset names? (Yes or No)").strip().lower()
 
     # return pets name so can be accessed later
     return name_pet
@@ -83,7 +94,7 @@ def chose_name():
     print("Choose one of the following names:")
     number = 1
     # list foods in a for loop
-    for names in NAME_LIST:
+    for names in name_list:
         # print the names in the list
         print("{}.  {}".format(number, names.title()))
         number += 1
@@ -160,6 +171,7 @@ def user_choice_food(weight):
 
     # adding the value of the food to the pets current weight
     weight += FOOD_DICT[chosen_food]
+    print("Your pet weighs {}kgs".format(weight))
 
     # return weight to be used later outside loop
     return weight
@@ -189,6 +201,7 @@ def user_choice_exercise(weight):
 
     # subtracting the value of the food to the pets current weight
     weight += EXERCISE_DICT[chosen_activity]
+    print("Your pet weighs {kgs".format(weight))
 
     # return weight to be used later outside loop
     return weight
@@ -200,8 +213,9 @@ def death_checker(weight):
     # if the weight is 2.6 or greater inform user, pet has died
     if weight > 2.5:
         # simple message saying the users pet has died and why
-        print("You fed your pet too much and they died")
-        print("Your pet weighed {:1.1f}".format(weight))
+        print("")
+        print("Sadly, you fed your pet too much and they died")
+        print("Your pet weighed {:1.1f}kgs".format(weight))
 
         # setting pet_alive loop to false to end game
         pet_alive = False
@@ -209,8 +223,9 @@ def death_checker(weight):
     # if the weight is 1.4 or lower inform user, pet has died
     elif weight < 1.5:
         # simple message saying the users pet has died and why
-        print("You didn't feed your pet enough and they died.")
-        print("Your pet weighed {:1.1f}".format(weight))
+        print("")
+        print("Sadly, you didn't feed your pet enough and they died.")
+        print("Your pet weighed {:1.1f}kgs".format(weight))
         # setting pet_alive loop to false to end game
         pet_alive = False
 
@@ -222,92 +237,92 @@ def death_checker(weight):
     return pet_alive
 
 
-# food dictionary with the available foods
-# along with the weight the pet will gain
-FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3,
-             "Chocolate": 0.4}
-
-# exercise dictionary with the available exercises to do
-# along with the weight the pet will lose
-EXERCISE_DICT = {"Hop": -0.2, "Walk": -0.4, "Run": -0.1, "Jump": -0.3}
-
-# list of names for the user to choose from
-NAME_LIST = ["Coco", "Charlie", "Alvin", "Cupcake", "Felix", "Jazz", "Midnight", "Peanut", "Pearl", "Roxie"]
-
-
 # beginning of main routine
+if __name__ == "__main__":
 
-# welcome info stating help info
-welcome_info()
+    # food dictionary with the available foods
+    # along with the weight the pet will gain
+    FOOD_DICT = {"Carrots": 0.2, "Grass": 0.4, "Celery": 0.1, "Spinach": 0.3,
+                 "Chocolate": 0.4}
 
-# formatting the title
-print()
-formatting("-", "Naming Your Pet")
-# getting the user to select a name for their pet
-user_choice_name()
+    # exercise dictionary with the available exercises to do
+    # along with the weight the pet will lose
+    EXERCISE_DICT = {"Hop": -0.2, "Walk": -0.4, "Run": -0.1, "Jump": -0.3}
 
-# getting the user to select a weight for their pet
-pet_weight = set_weight()
+    # list of names for the user to choose from
+    name_list = ["Coco", "Charlie", "Alvin", "Cupcake", "Felix", "Jazz", "Midnight", "Peanut", "Pearl", "Roxie"]
 
-print()
+    # welcome info stating help info
+    welcome_info()
 
-# Setting alive loop to true
-# loop for game to continue
-
-alive = True
-
-# while the pet is alive run the game
-while alive:
-
-    # menu for the user to choose an option
-    print("-" * 20)
+    # formatting the title
     print()
-    formatting("*", "Menu")
+    formatting("-", "Naming Your Pet")
+    # getting the user to select a name for their pet
+    user_choice_name()
+
+    # getting the user to select a weight for their pet
+    pet_weight = set_weight()
+
     print()
 
-    # menu for the user to choose the options from
-    print("Please choose an option from the following menu:")
-    print("1. Show current weight\n"
-          "2. Feed Pet\n"
-          "3. Exercise Pet\n"
-          "4. See help information\n"
-          "5. Exit\n")
-    # getting the user to enter their choice.
-    option = check_int("Enter your choice: ", "You must choose a number "
-                                              "between 1 and 5.", 1, 5)
-    # if user enters 1 print the current weight of the pet
-    if option == 1:
-        print("Your pet currently weighs {:1.1}".format(pet_weight))
+    # Setting alive loop to true
+    # loop for game to continue
 
-    # if user enters 2, runs the feeding function along with checking if the pet weight is too high/low
-    # causing the pet to die
-    if option == 2:
+    alive = True
+
+    # while the pet is alive run the game
+    while alive:
+
+        # menu for the user to choose an option
+        print("-" * 20)
         print()
-        # changing the pet weight to the new pet weight
-        # (increasing the weight as the pet is being feed)
-        pet_weight = user_choice_food(pet_weight)
-        # checking if the pet is alive depending on it's current weight
-        # and setting alive to either true or false depending if the pet is dead or alive
-        alive = death_checker(pet_weight)
-
-    # if user enters 3 runs the exercise function along with checking if the pet weight is too high/low
-    # causing the pet to die
-    if option == 3:
+        formatting("*", "Menu")
         print()
-        pet_weight = user_choice_exercise(pet_weight)
-        # checking if the pet id alive depending on it's current weight
-        # and setting alive to either true or false depending if the pet is dead or alive
-        alive = death_checker(pet_weight)
 
-    # if user enters 4 print the help information
-    if option == 4:
-        help_info()
+        # menu for the user to choose the options from
+        print("Please choose an option from the following menu:")
+        print("1. Show current weight\n"
+              "2. Feed Pet\n"
+              "3. Exercise Pet\n"
+              "4. See help information\n"
+              "5. Exit\n")
+        # getting the user to enter their choice.
+        option = check_int("Enter your choice: ", "You must choose a number "
+                                                  "between 1 and 5.", 1, 5)
+        # if user enters 1 print the current weight of the pet
+        if option == 1:
+            print("Your pet currently weighs {:1.1f}".format(pet_weight))
 
-    # if user enters 5, break loop and end game
-    if option == 5:
-        # setting alive to false so the loop stops and game finishes
-        alive = False
-        break
+        # if user enters 2, runs the feeding function along with checking if the pet weight is too high/low
+        # causing the pet to die
+        if option == 2:
+            print()
+            # changing the pet weight to the new pet weight
+            # (increasing the weight as the pet is being feed)
+            pet_weight = user_choice_food(pet_weight)
+            # checking if the pet is alive depending on it's current weight
+            # and setting alive to either true or false depending if the pet is dead or alive
+            alive = death_checker(pet_weight)
 
-# the game ends and thanks the user for playing
-print("Thanks for playing")
+        # if user enters 3 runs the exercise function along with checking if the pet weight is too high/low
+        # causing the pet to die
+        if option == 3:
+            print()
+            pet_weight = user_choice_exercise(pet_weight)
+            # checking if the pet id alive depending on it's current weight
+            # and setting alive to either true or false depending if the pet is dead or alive
+            alive = death_checker(pet_weight)
+
+        # if user enters 4 print the help information
+        if option == 4:
+            help_info()
+
+        # if user enters 5, break loop and end game
+        if option == 5:
+            # setting alive to false so the loop stops and game finishes
+            alive = False
+            break
+
+    # the game ends and thanks the user for playing
+    print("Thanks for playing")
