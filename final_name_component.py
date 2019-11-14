@@ -35,6 +35,7 @@ def user_enter_name():
         else:
             add_name = ""
             while add_name is "":
+                # adding name to list of names
                 add_name = input("Do you want to add this name to the list of preset names? (Yes or No)").strip().lower()
                 name_list.append(name_pet)
     # return pets name so can be accessed later
