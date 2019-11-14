@@ -69,15 +69,17 @@ def help_info():
 def user_enter_name():
     name_pet = input("What would you like to name your pet? >> ").title().strip()
 
+    # if user pushes enter then automatically assigns a name
     if name_pet == "":
         name_pet = "Jazzy"
-        print("You didn't name your pet, so your pet is now called {}".format(name_pet))
+        print("Sorry, you didn't name your pet, so I've called it {}".format(name_pet))
     else:
         # printing the chosen name
-        print("Your pets name is {}".format(name_pet))
+        print("Your pet's name is {}".format(name_pet))
 
+        # if user enters a name that is already in the list informs user and doesn't re add it
         if name_pet in name_list:
-            print ("This name is already in the list")
+            print("This name is already in the list")
         else:
             add_name = ""
             while add_name is "":
@@ -167,7 +169,7 @@ def user_choice_food(weight):
     chosen_food = food_menu[choice - 1]
 
     # printing the food the pet will eat
-    print("You will feed your pet {}.".format(chosen_food.title()))
+    print("Your pet will eat {}.".format(chosen_food.title()))
 
     # adding the value of the food to the pets current weight
     weight += FOOD_DICT[chosen_food]
@@ -201,7 +203,7 @@ def user_choice_exercise(weight):
 
     # subtracting the value of the food to the pets current weight
     weight += EXERCISE_DICT[chosen_activity]
-    print("Your pet weighs {kgs".format(weight))
+    print("Your pet weighs {}kgs".format(weight))
 
     # return weight to be used later outside loop
     return weight
